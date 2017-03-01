@@ -607,7 +607,6 @@
           
             <p>Since BWA does not report the similarity of the read to reference, we can use the edit distance tag “NM” to retrieve the information regarding the difference between read and reference on sequence. Afterwards, we are able to calculate the identity using:</p>
 <p>$$identity = \frac{edit\ distance}{read\ length}$$</p>
-<p>Simple inline $a = b + c$.</p>
 <p>Here it a script using AWk to compute the identity and count the number of alignments mapped to “EamGingi” with identity above 97%.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">for file in *.bam;</div><div class="line">do </div><div class="line">	samtools view -h -F4 $file| \</div><div class="line">	awk -F&quot;\t&quot; -v maxpct=0.03 &apos;NF&gt;=11&amp;&amp;$3==&quot;EamGingi&quot;</div><div class="line">	&#123;</div><div class="line">		nm=gensub(/.*\tNM:i:([0-9]+)\t.*/, &quot;\\1&quot;, &quot;g&quot;, $0);nmr=nm/length($10);</div><div class="line">		if(nmr&lt;=maxpct)</div><div class="line">		&#123;</div><div class="line">		print $1, $12,$13, nm</div><div class="line">		&#125;</div><div class="line">	&#125;&apos;|wc -l;</div><div class="line">done</div></pre></td></tr></table></figure>
 

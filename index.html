@@ -1,6 +1,1600 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="A another place for data science"><title>Space of a muser | Insight, epiphany</title><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/4.2.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.1.0"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Space of a muser</h1><a id="logo" href="/.">Space of a muser</a><p class="description">Insight, epiphany</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h2 class="post-title"><a href="/2017/02/28/Surival-analysis-using-R/">Surival analysis using R</a></h2><div class="post-meta">2017-02-28</div><a data-disqus-identifier="2017/02/28/Surival-analysis-using-R/" href="/2017/02/28/Surival-analysis-using-R/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>以下代码参考<a href="http://www.biotrainee.com/thread-966-1-1.html" target="_blank" rel="external">生信技能树论坛</a></p></div><p class="readmore"><a href="/2017/02/28/Surival-analysis-using-R/">Read More</a></p></div><div class="post"><h2 class="post-title"><a href="/2017/02/18/Calculate-the-identity-of-the-BWA-alignments/">Calculate the identity of the BWA alignments</a></h2><div class="post-meta">2017-02-18</div><a data-disqus-identifier="2017/02/18/Calculate-the-identity-of-the-BWA-alignments/" href="/2017/02/18/Calculate-the-identity-of-the-BWA-alignments/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>Since BWA does not report the similarity of the read to reference, we can use the edit distance tag “NM” to retrieve the information regarding the difference between read and reference on sequence. Afterwards, we are able to calculate the identity using:</p></div><p class="readmore"><a href="/2017/02/18/Calculate-the-identity-of-the-BWA-alignments/">Read More</a></p></div><div class="post"><h2 class="post-title"><a href="/2016/10/24/Plot-heatmaap-with-side-color-indicating-the-class-of-variables/">Plot heatmaap with side color indicating the class of variables</a></h2><div class="post-meta">2016-10-24</div><a data-disqus-identifier="2016/10/24/Plot-heatmaap-with-side-color-indicating-the-class-of-variables/" href="/2016/10/24/Plot-heatmaap-with-side-color-indicating-the-class-of-variables/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>Sometimes, we need to make heatmaps for the matrix data with class information of categorical variables. In this case, we may want to use side color to mark the classes. Since neither matplotlib nor seaborn offer such functionality directly, we have to implement it in an indirect way. Here is some code snippets from <a href="http://stackoverflow.com/questions/27988846/how-to-express-classes-on-the-axis-of-a-heatmap-in-seaborn" target="_blank" rel="external">Stack Overflow</a> with a bit change to achieve this requirement (The original code does not work for me, so I did some change).</p></div><p class="readmore"><a href="/2016/10/24/Plot-heatmaap-with-side-color-indicating-the-class-of-variables/">Read More</a></p></div><div class="post"><h2 class="post-title"><a href="/2016/10/15/Some-tips-for-pandas-usage/">Some useful tips for pandas</a></h2><div class="post-meta">2016-10-15</div><a data-disqus-identifier="2016/10/15/Some-tips-for-pandas-usage/" href="/2016/10/15/Some-tips-for-pandas-usage/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><ul></div><p class="readmore"><a href="/2016/10/15/Some-tips-for-pandas-usage/">Read More</a></p></div><div class="post"><h2 class="post-title"><a href="/2016/10/12/Taxonomy-tree-constructio-and-visualization/">Taxonomy tree constructio and visualization</a></h2><div class="post-meta">2016-10-12</div><a data-disqus-identifier="2016/10/12/Taxonomy-tree-constructio-and-visualization/" href="/2016/10/12/Taxonomy-tree-constructio-and-visualization/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>iTOL, ete3, fasttree, QIIME, PhyloToAST, PhyloT, jsPhyloSVG, newick.js  + D3.js</p></div><p class="readmore"><a href="/2016/10/12/Taxonomy-tree-constructio-and-visualization/">Read More</a></p></div><div class="post"><h2 class="post-title"><a href="/2016/10/09/Data-visualization-with-Python/">Data visualization with Python</a></h2><div class="post-meta">2016-10-09</div><a data-disqus-identifier="2016/10/09/Data-visualization-with-Python/" href="/2016/10/09/Data-visualization-with-Python/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>最近经常用Python画柱状图和heatmap，一般需要存储为矢量图的PDF文件，方便后期编辑。这里面有些需要注意的地方，记录如下：</p></div><p class="readmore"><a href="/2016/10/09/Data-visualization-with-Python/">Read More</a></p></div><div class="post"><h2 class="post-title"><a href="/2016/10/05/Python-module-bs4/">Python module bs4</a></h2><div class="post-meta">2016-10-05</div><a data-disqus-identifier="2016/10/05/Python-module-bs4/" href="/2016/10/05/Python-module-bs4/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>Python最受欢迎用以解析网页的模块bs4，也就是Beautiful Soup的确是一个非常好用的工具。但是我在使用中发现了一个坑，bs4里不同的xml／html解析器会得到不同的结果。不过对于这一点官网文档里也有说明，并详细比较了不同的解析器的结果差异。我一开始所使用的lxml也是最高效，用的人最多的解析器，但是对于我的html页面解析出现偏差，当我切换到Python自带的html.parser，一切太平。</p></div><p class="readmore"><a href="/2016/10/05/Python-module-bs4/">Read More</a></p></div><div class="post"><h2 class="post-title"><a href="/2016/10/05/hello-world/">Hello World</a></h2><div class="post-meta">2016-10-05</div><a data-disqus-identifier="2016/10/05/hello-world/" href="/2016/10/05/hello-world/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p></div><p class="readmore"><a href="/2016/10/05/hello-world/">Read More</a></p></div><script id="dsq-count-scr" src="//dreamcatcher-1.disqus.com/count.js" async></script></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://dawnmy.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/pandas/" style="font-size: 15px;">pandas</a> <a href="/tags/NGS/" style="font-size: 15px;">NGS</a> <a href="/tags/identity/" style="font-size: 15px;">identity</a> <a href="/tags/SAM-tag-NM/" style="font-size: 15px;">SAM tag NM</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/seaborn/" style="font-size: 15px;">seaborn</a> <a href="/tags/BWA-aligner/" style="font-size: 15px;">BWA aligner</a> <a href="/tags/matplotlib/" style="font-size: 15px;">matplotlib</a> <a href="/tags/jupyter/" style="font-size: 15px;">jupyter</a> <a href="/tags/heatmap/" style="font-size: 15px;">heatmap</a> <a href="/tags/sidecolor/" style="font-size: 15px;">sidecolor</a> <a href="/tags/data-process/" style="font-size: 15px;">data process</a> <a href="/tags/TCGA/" style="font-size: 15px;">TCGA</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/28/Surival-analysis-using-R/">Surival analysis using R</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/18/Calculate-the-identity-of-the-BWA-alignments/">Calculate the identity of the BWA alignments</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Plot-heatmaap-with-side-color-indicating-the-class-of-variables/">Plot heatmaap with side color indicating the class of variables</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/15/Some-tips-for-pandas-usage/">Some useful tips for pandas</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/12/Taxonomy-tree-constructio-and-visualization/">Taxonomy tree constructio and visualization</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/Data-visualization-with-Python/">Data visualization with Python</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/05/Python-module-bs4/">Python module bs4</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/05/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> Recent Comments</i></div><script type="text/javascript" src="//dreamcatcher-1.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Blogroll</i></div><ul></ul><a href="http://scikit-learn.org/stable/" title="scikit-learn" target="_blank">scikit-learn</a><ul></ul><a href="https://d3js.org" title="D3.js" target="_blank">D3.js</a><ul></ul><a href="http://www.chartjs.org/docs/" title="Chart.js" target="_blank">Chart.js</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">Space of a muser.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.1.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.1.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.1.0"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-ga('create','UA-44649121-2','auto');ga('send','pageview');
-</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.1.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.1.0"></script></div></body></html>
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Science, Data, Statistics, Machine learning, Visualization, Quant" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="A another place for data science">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Space of a muser">
+<meta property="og:url" content="http://dawnmy.github.io/index.html">
+<meta property="og:site_name" content="Space of a muser">
+<meta property="og:description" content="A another place for data science">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Space of a muser">
+<meta name="twitter:description" content="A another place for data science">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://dawnmy.github.io/"/>
+
+
+
+
+
+  <title> Space of a muser </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-44649121-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Space of a muser</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Insight, epiphany</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://dawnmy.github.io/2017/02/28/Surival-analysis-using-R/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Space of a muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/28/Surival-analysis-using-R/" itemprop="url">
+                  Surival analysis using R
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-28T22:14:25+01:00">
+                2017-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/28/Surival-analysis-using-R/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/28/Surival-analysis-using-R/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>以下代码参考<a href="http://www.biotrainee.com/thread-966-1-1.html" target="_blank" rel="external">生信技能树论坛</a></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">rm(list=ls())</div><div class="line">setwd(<span class="string">'./TCGA'</span>)</div><div class="line"><span class="comment">###读取自己的TCGA数据</span></div><div class="line">dat=read.csv(<span class="string">'3expforRsuoxiao.csv'</span>,header =<span class="literal">TRUE</span>,row.names= <span class="number">1</span>,sep = <span class="string">","</span>)<span class="comment">##基因不能太多</span></div><div class="line">rt=read.csv(<span class="string">'3osforR.csv'</span>,header =<span class="literal">TRUE</span>,row.names= <span class="number">1</span>,sep = <span class="string">","</span>)<span class="comment">##,header =TRUE第一行,row.names= 1第一列  </span></div><div class="line">os=rt[,<span class="number">2</span>]  <span class="comment">##（时间）</span></div><div class="line">STATUS=rt[,<span class="number">1</span>] <span class="comment">###（生存的event）</span></div><div class="line">log_rank_p &lt;- apply(dat,  <span class="number">1</span>, <span class="keyword">function</span>(values1)&#123;  <span class="comment">## for a matrix 1 indicates rows, 2 indicates columns, c(1, 2) indicates rows and columns.</span></div><div class="line">  group=ifelse(values1&gt;median(values1),<span class="string">'high'</span>,<span class="string">'low'</span>)  <span class="comment">##分高低组  ifelse(test, yes, no)test， an object which can be coerced to logical mode.</span></div><div class="line">  survival_dat &lt;- data.frame(group=group,os=os,STATUS=STATUS,stringsAsFactors = <span class="literal">F</span>)  <span class="comment">##行，列的生存时间， 即 基因表达值分成了高低组，和相应</span></div><div class="line">  <span class="keyword">library</span>(survival)<span class="comment">###表格可以任意添加参数，如性别，年龄等。</span></div><div class="line">  my.surv &lt;- Surv(survival_dat$os,survival_dat$STATUS)  <span class="comment">###my.surv &lt;- Surv(OS_MONTHS,OS_STATUS=='LIVING') </span></div><div class="line">  <span class="comment">##这个Surv函数第一个参数必须是数值型的时间，第二个参数是逻辑向量，1,0表示死亡与否</span></div><div class="line">  kmfit2 &lt;- survfit(my.surv~survival_dat$group)  <span class="comment">##### 生存数据对象~表达高低 创建KM生存曲线 $绝对引用？</span></div><div class="line">  data.survdiff=survdiff(my.surv~group,data = survival_dat) <span class="comment">##data = survival_dat 单个的表达高低与生存数据对象</span></div><div class="line">  <span class="comment">##用于不同组的统计检验 Two-sample test  survdiff(Surv(futime, fustat) ~ rx,data=ovarian)#生存数据对象~表达高低</span></div><div class="line">  p.val = <span class="number">1</span> - pchisq(data.survdiff$chisq, length(data.survdiff$n) - <span class="number">1</span>)</div><div class="line">&#125;)</div><div class="line">names(log_rank_p[log_rank_p&lt;<span class="number">0.05</span>])</div></pre></td></tr></table></figure>
+<p>第二个以TCGA中的Pancreatic Adenocarcinoma样本为例的surival分析</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line"><span class="comment">####teach code####</span></div><div class="line"><span class="keyword">library</span>(survival)</div><div class="line"><span class="comment">#read expression data and modify its class and colnames/rownames</span></div><div class="line"></div><div class="line"><span class="comment">#PAAD_gene_expression.csv数据已经经过Z_转换的数据。</span></div><div class="line"></div><div class="line">z_rna &lt;- read.csv(file=<span class="string">"PAAD_gene_expression.csv"</span>,header = <span class="literal">T</span>,row.names = <span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="comment">#clincal是所有样本的临床信息</span></div><div class="line">clinical &lt;- t(read.table(<span class="string">"PAAD.merged_only_clinical_clin_format.txt"</span>,header=<span class="literal">T</span>, row.names=<span class="number">1</span>, sep=<span class="string">"\t"</span>,stringsAsFactors = <span class="literal">F</span>))</div><div class="line"></div><div class="line">clinical &lt;- as.data.frame(clinical)</div><div class="line"><span class="comment">#transform rna data's colnames and rownames</span></div><div class="line">z_rna &lt;- as.matrix(z_rna)</div><div class="line">colnames(z_rna) &lt;- gsub(<span class="string">"\\."</span>,<span class="string">"-"</span>,colnames(z_rna))</div><div class="line">rownames(z_rna) &lt;- sapply(rownames(z_rna), <span class="keyword">function</span>(x) unlist(strsplit(x,<span class="string">"\\|"</span>))[[<span class="number">1</span>]])</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#check the type of cancer data</span></div><div class="line"><span class="comment">#table(substr(colnames(z_rna),14,15))</span></div><div class="line"><span class="comment">#grep patient ID in clinical data</span></div><div class="line">clinical$IDs &lt;- toupper(clinical$patient.bcr_patient_barcode)</div><div class="line">sum(clinical$IDs %<span class="keyword">in</span>% colnames(z_rna))<span class="comment"># we have 178 patients that we could use</span></div><div class="line"><span class="comment">#grep information for survival</span></div><div class="line"></div><div class="line">ind_keep &lt;- grep(<span class="string">"days_to_death"</span>,colnames(clinical))</div><div class="line">death &lt;- as.matrix(clinical[,ind_keep])</div><div class="line">death_collapsed &lt;- apply(death,<span class="number">1</span>,FUN = <span class="keyword">function</span>(x)max(x,na.rm = <span class="literal">T</span>)) <span class="comment">#提取最大值</span></div><div class="line">death_collapsed&lt;- as.numeric(death_collapsed)</div><div class="line"></div><div class="line"><span class="comment">#last follow_up information</span></div><div class="line">ind_keep &lt;- grep(<span class="string">"days_to_last_followup"</span>,colnames(clinical))</div><div class="line">fl &lt;- as.matrix(clinical[,ind_keep])</div><div class="line">fl_collapsed &lt;- apply(fl,<span class="number">1</span>,FUN = <span class="keyword">function</span>(x)max(x,na.rm = <span class="literal">T</span>))</div><div class="line">fl_collapsed &lt;- as.numeric(fl_collapsed)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#construct a new dataframe containing all information</span></div><div class="line">all_clin &lt;- data.frame(death_collapsed,fl_collapsed)</div><div class="line">colnames(all_clin) &lt;- c(<span class="string">"death_days"</span>, <span class="string">"followUp_days"</span>)</div><div class="line">all_clin$death_event &lt;- ifelse(clinical$patient.vital_status == <span class="string">"alive"</span>, <span class="number">0</span>,<span class="number">1</span>)</div><div class="line">all_clin$new_death &lt;- apply(all_clin,<span class="number">1</span>,<span class="keyword">function</span>(x)ifelse(x[<span class="number">3</span>]==<span class="number">0</span>,x[<span class="number">2</span>],x[<span class="number">1</span>]))</div><div class="line">table(clinical$patient.vital_status)</div><div class="line">rownames(all_clin) &lt;- clinical$IDs</div><div class="line"><span class="comment">##connect to RNA-seq</span></div><div class="line"><span class="comment"># create event vector for RNASeq data</span></div><div class="line">event_rna &lt;- t(apply(z_rna, <span class="number">1</span>, <span class="keyword">function</span>(x) ifelse(abs(x) &gt; <span class="number">1.96</span>,<span class="number">1</span>,<span class="number">0</span>)))</div><div class="line">in_clin_tum &lt;- match(colnames(z_rna),rownames(all_clin))</div><div class="line">tumor_clinical &lt;- all_clin[in_clin_tum,]</div><div class="line"><span class="comment">#example gene</span></div><div class="line">ind_gene &lt;- which(rownames(z_rna) == <span class="string">"TP53"</span>)</div><div class="line">table(event_rna[ind_gene,])</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">###survival analysis###</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#over_all survival</span></div><div class="line">su_OS &lt;- Surv(as.numeric(tumor_clinical$new_death),as.numeric(tumor_clinical$death_event))</div><div class="line">fit_OS &lt;- survfit(su_OS~event_rna[ind_gene,])</div><div class="line">p &lt;- survdiff(su_OS~event_rna[ind_gene,])</div><div class="line">pv &lt;- ifelse(is.na(p),<span class="keyword">next</span>,(round(<span class="number">1</span> - pchisq(p$chisq, length(p$n) - <span class="number">1</span>),<span class="number">3</span>)))[[<span class="number">1</span>]]</div><div class="line">x1 &lt;- ifelse(is.na(as.numeric(summary(fit_OS)$table[,<span class="string">'median'</span>][<span class="number">1</span>])),<span class="string">"NA"</span>,as.numeric(summary(fit_OS)$table[,<span class="string">'median'</span>][<span class="number">1</span>]))</div><div class="line">x2 &lt;- as.numeric(summary(fit_OS)$table[,<span class="string">'median'</span>][<span class="number">2</span>])</div><div class="line"></div><div class="line"><span class="comment">#get necessary information</span></div><div class="line">summary(fit_OS)</div><div class="line">summary(fit_OS)$table[,<span class="string">'median'</span>]</div><div class="line">summary(fit_OS,times = <span class="number">365</span>)</div><div class="line"><span class="comment">#plot survival curve</span></div><div class="line"></div><div class="line">plot(fit_OS,conf.int=<span class="literal">FALSE</span>,col=c(<span class="string">"black"</span>,<span class="string">"red"</span>),xlab=<span class="string">"Days"</span>,ylab = <span class="string">"Proportion Survival"</span>)</div><div class="line">legend(<span class="number">1800</span>,<span class="number">0.995</span>,legend=paste(<span class="string">"p.value = "</span>,pv[[<span class="number">1</span>]],sep=<span class="string">""</span>),bty=<span class="string">"n"</span>,cex=<span class="number">1.4</span>)</div><div class="line">legend(max(as.numeric(as.character(all_clin$death_days)[in_clin_tum]),na.rm = <span class="literal">T</span>)*<span class="number">0.7</span>,<span class="number">0.94</span>,</div><div class="line">legend=c(paste(<span class="string">"NotAltered="</span>,x1),paste(<span class="string">"Altered="</span>,x2)),bty=<span class="string">"n"</span>,cex=<span class="number">1.3</span>,lwd=<span class="number">3</span>,col=c(<span class="string">"black"</span>,<span class="string">"red"</span>))</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://dawnmy.github.io/2017/02/18/Calculate-the-identity-of-the-BWA-alignments/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Space of a muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/18/Calculate-the-identity-of-the-BWA-alignments/" itemprop="url">
+                  Calculate the identity of the BWA alignments
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-18T20:28:36+01:00">
+                2017-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/18/Calculate-the-identity-of-the-BWA-alignments/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/18/Calculate-the-identity-of-the-BWA-alignments/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Since BWA does not report the similarity of the read to reference, we can use the edit distance tag “NM” to retrieve the information regarding the difference between read and reference on sequence. Afterwards, we are able to calculate the identity using:</p>
+<p>$$identity = \frac{edit\ distance}{read\ length}$$</p>
+<p>Simple inline $a = b + c$.</p>
+<p>Here it a script using AWk to compute the identity and count the number of alignments mapped to “EamGingi” with identity above 97%.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">for file in *.bam;</div><div class="line">do </div><div class="line">	samtools view -h -F4 $file| \</div><div class="line">	awk -F&quot;\t&quot; -v maxpct=0.03 &apos;NF&gt;=11&amp;&amp;$3==&quot;EamGingi&quot;</div><div class="line">	&#123;</div><div class="line">		nm=gensub(/.*\tNM:i:([0-9]+)\t.*/, &quot;\\1&quot;, &quot;g&quot;, $0);nmr=nm/length($10);</div><div class="line">		if(nmr&lt;=maxpct)</div><div class="line">		&#123;</div><div class="line">		print $1, $12,$13, nm</div><div class="line">		&#125;</div><div class="line">	&#125;&apos;|wc -l;</div><div class="line">done</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://dawnmy.github.io/2016/10/24/Plot-heatmaap-with-side-color-indicating-the-class-of-variables/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Space of a muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/24/Plot-heatmaap-with-side-color-indicating-the-class-of-variables/" itemprop="url">
+                  Plot heatmaap with side color indicating the class of variables
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-24T22:40:00+02:00">
+                2016-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/10/24/Plot-heatmaap-with-side-color-indicating-the-class-of-variables/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/24/Plot-heatmaap-with-side-color-indicating-the-class-of-variables/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Sometimes, we need to make heatmaps for the matrix data with class information of categorical variables. In this case, we may want to use side color to mark the classes. Since neither matplotlib nor seaborn offer such functionality directly, we have to implement it in an indirect way. Here is some code snippets from <a href="http://stackoverflow.com/questions/27988846/how-to-express-classes-on-the-axis-of-a-heatmap-in-seaborn" target="_blank" rel="external">Stack Overflow</a> with a bit change to achieve this requirement (The original code does not work for me, so I did some change).</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">%matplotlib inline</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</div><div class="line">sns.set(font=<span class="string">"Arial"</span>)</div><div class="line"></div><div class="line"><span class="comment"># Load the brain networks example dataset</span></div><div class="line">df = sns.load_dataset(<span class="string">"brain_networks"</span>, header=[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>], index_col=<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="comment"># Select a subset of the networks</span></div><div class="line">used_networks = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">16</span>, <span class="number">17</span>]</div><div class="line">used_columns = (df.columns.get_level_values(<span class="string">"network"</span>)</div><div class="line">                          .astype(int)</div><div class="line">                          .isin(used_networks))</div><div class="line">df = df.loc[:, used_columns]</div><div class="line"><span class="comment"># Create a custom palette to identify the networks</span></div><div class="line">network_pal = sns.cubehelix_palette(len(used_networks),</div><div class="line">                                    light=<span class="number">.9</span>, dark=<span class="number">.1</span>, reverse=<span class="keyword">True</span>,</div><div class="line">                                    start=<span class="number">1</span>, rot=<span class="number">-2</span>)</div><div class="line">network_lut = dict(zip(map(str, used_networks), network_pal))</div><div class="line"></div><div class="line"><span class="comment"># Convert the palette to vectors that will be drawn on the side of the matrix</span></div><div class="line">network_labels = df.columns.get_level_values(<span class="string">"network"</span>)</div><div class="line">network_colors = pd.Series(network_labels, index=df.columns).map(network_lut)</div><div class="line"></div><div class="line"><span class="comment"># Create a custom colormap for the heatmap values</span></div><div class="line">cmap = sns.diverging_palette(h_neg=<span class="number">210</span>, h_pos=<span class="number">350</span>, s=<span class="number">90</span>, l=<span class="number">30</span>, as_cmap=<span class="keyword">True</span>)</div><div class="line"></div><div class="line"><span class="comment"># Draw the full plot</span></div><div class="line">g = sns.clustermap(df.corr(),</div><div class="line"></div><div class="line">                  <span class="comment"># Turn off the clustering</span></div><div class="line">                  row_cluster=<span class="keyword">False</span>, col_cluster=<span class="keyword">False</span>,</div><div class="line"></div><div class="line">                  <span class="comment"># Add colored class labels</span></div><div class="line">                  row_colors=network_colors, col_colors=network_colors,</div><div class="line"></div><div class="line">                  <span class="comment"># Make the plot look better when many rows/cols</span></div><div class="line">                  linewidths=<span class="number">0</span>, xticklabels=<span class="keyword">False</span>, yticklabels=<span class="keyword">False</span>)</div><div class="line"></div><div class="line"><span class="comment"># Draw the legend bar for the classes                 </span></div><div class="line"><span class="keyword">for</span> label <span class="keyword">in</span> network_labels.unique():</div><div class="line">    g.ax_col_dendrogram.bar(<span class="number">0</span>, <span class="number">0</span>, color=network_lut[label],</div><div class="line">                            label=label, linewidth=<span class="number">0</span>)</div><div class="line">g.ax_col_dendrogram.legend(loc=<span class="string">"center"</span>, ncol=<span class="number">5</span>)</div><div class="line"></div><div class="line"><span class="comment"># Adjust the postion of the main colorbar for the heatmap</span></div><div class="line">g.cax.set_position([<span class="number">.97</span>, <span class="number">.2</span>, <span class="number">.03</span>, <span class="number">.45</span>])</div></pre></td></tr></table></figure>
+<p><img src="/content/images/heatmap_sidecolor.png" alt="Heatmap"></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://dawnmy.github.io/2016/10/15/Some-tips-for-pandas-usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Space of a muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/15/Some-tips-for-pandas-usage/" itemprop="url">
+                  Some useful tips for pandas
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-15T22:04:34+02:00">
+                2016-10-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/10/15/Some-tips-for-pandas-usage/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/15/Some-tips-for-pandas-usage/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>Select or groupby one column in pandas datafram with multi-level index</li>
+</ul>
+<blockquote>
+<p>To select one column in a datafram with multi-level index, you can use a tuple containing the names of the column in different levels to access desired column.</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df1 = df.groupby([(<span class="string">'level0'</span>,<span class="string">'level1'</span>)]).sum()</div></pre></td></tr></table></figure>
+<ul>
+<li>the use of <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.reset_index.html" target="_blank" rel="external">reset_index</a></li>
+</ul>
+<blockquote>
+<p>Convert index level 0 to a column</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.reset_index(level=<span class="number">0</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li>Retrieve the index from multi-level index dataframe</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.index.get_level_values(<span class="number">0</span>)</div></pre></td></tr></table></figure>
+<p><img src="http://www.lovethispic.com/uploaded_images/82613-Beautiful-Spring-Flowers.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://dawnmy.github.io/2016/10/12/Taxonomy-tree-constructio-and-visualization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Space of a muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/12/Taxonomy-tree-constructio-and-visualization/" itemprop="url">
+                  Taxonomy tree constructio and visualization
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-12T00:12:56+02:00">
+                2016-10-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/10/12/Taxonomy-tree-constructio-and-visualization/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/12/Taxonomy-tree-constructio-and-visualization/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>iTOL, ete3, fasttree, QIIME, PhyloToAST, PhyloT, jsPhyloSVG, newick.js  + D3.js</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://dawnmy.github.io/2016/10/09/Data-visualization-with-Python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Space of a muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/09/Data-visualization-with-Python/" itemprop="url">
+                  Data visualization with Python
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-09T17:03:32+02:00">
+                2016-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/10/09/Data-visualization-with-Python/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/09/Data-visualization-with-Python/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近经常用Python画柱状图和heatmap，一般需要存储为矢量图的PDF文件，方便后期编辑。这里面有些需要注意的地方，记录如下：</p>
+<ul>
+<li>关于pdf的图中启用Truetype字体方便编辑</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.rcParams[<span class="string">'pdf.fonttype'</span>] = <span class="number">42</span></div></pre></td></tr></table></figure>
+<ul>
+<li>barplot的legend大小位置设置</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.legend(loc=<span class="string">'lower right'</span>, prop=&#123;<span class="string">'size'</span>: <span class="number">25</span>&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>heatmap的colorbar的大小调整</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.colorbar(im, fraction=<span class="number">0.046</span>, pad=<span class="number">0.04</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li>轴刻度标签对齐方式</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ax1.set_xticklabels(labels, rotation=<span class="number">60</span>, ha=<span class="string">'left'</span>)</div></pre></td></tr></table></figure>
+<p>不过改为Truetype字体后有个问题就是字体貌似会有偏移，暂时没有找到解决方案，我的OS是macOS用的Python3。希望能有解决方案，也许随着matplotlib的更新会解决。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://dawnmy.github.io/2016/10/05/Python-module-bs4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Space of a muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/05/Python-module-bs4/" itemprop="url">
+                  Python module bs4
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-05T21:34:12+02:00">
+                2016-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/10/05/Python-module-bs4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/05/Python-module-bs4/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Python最受欢迎用以解析网页的模块bs4，也就是Beautiful Soup的确是一个非常好用的工具。但是我在使用中发现了一个坑，bs4里不同的xml／html解析器会得到不同的结果。不过对于这一点官网文档里也有说明，并详细比较了不同的解析器的结果差异。我一开始所使用的lxml也是最高效，用的人最多的解析器，但是对于我的html页面解析出现偏差，当我切换到Python自带的html.parser，一切太平。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_reg_dic</span><span class="params">(gene_keggmapper_file)</span>:</span></div><div class="line">	gene_regulation_dic = &#123;<span class="string">"down"</span>:[], <span class="string">"up"</span>:[]&#125;</div><div class="line">	<span class="keyword">with</span> open(gene_keggmapper_file, <span class="string">'r'</span>) <span class="keyword">as</span> gene_reg:</div><div class="line">	    <span class="keyword">for</span> line <span class="keyword">in</span> gene_reg:</div><div class="line">	        line = line.strip()</div><div class="line">	        gene, color = line.split(<span class="string">"\t"</span>)</div><div class="line">	        <span class="keyword">if</span> color == <span class="string">"blue"</span>:</div><div class="line">	            gene_regulation_dic[<span class="string">'down'</span>].append(gene)</div><div class="line">	        <span class="keyword">else</span>:</div><div class="line">	            gene_regulation_dic[<span class="string">'up'</span>].append(gene)</div><div class="line">	<span class="keyword">return</span>(gene_regulation_dic)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">kegg_html_parse</span><span class="params">(in_html, in_keggmapper_file, out_gene_list_file, out_count_file)</span>:</span></div><div class="line"></div><div class="line">	<span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line">	</div><div class="line">	gene_regulation_dic = make_reg_dic(gene_keggmapper_file)</div><div class="line">	path_out = open(out_gene_list_file, <span class="string">'w'</span>)</div><div class="line">	path_plot_out = open(out_count_file, <span class="string">'w'</span>)</div><div class="line">	soup = BeautifulSoup(open(in_html), <span class="string">"lxml"</span>)</div><div class="line">	path_out.write(<span class="string">"\t"</span>.join([<span class="string">"pathways"</span>, <span class="string">"downregulation"</span>, <span class="string">"upregulation"</span>])+<span class="string">'\n'</span>)</div><div class="line">	path_plot_out.write(<span class="string">"\t"</span>.join([<span class="string">"downregulation"</span>, <span class="string">"upregulation"</span>])+<span class="string">'\n'</span>)</div><div class="line">	</div><div class="line">	<span class="keyword">for</span> pathway_raw <span class="keyword">in</span> soup.body.find_all(<span class="string">'li'</span>):</div><div class="line">	    lines = pathway_raw.text.strip().split(<span class="string">"\n"</span>)</div><div class="line">	    pathway_name = lines[<span class="number">0</span>][<span class="number">9</span>:<span class="number">-4</span>].strip()[:<span class="number">-23</span>]</div><div class="line">	    genes = [gene.strip().split(<span class="string">";"</span>)[<span class="number">0</span>].split()[<span class="number">1</span>].strip() <span class="keyword">for</span> gene <span class="keyword">in</span> lines[<span class="number">1</span>:] <span class="keyword">if</span> gene]</div><div class="line">    </div><div class="line">	    up_comman = list(set(genes) &amp; set(gene_regulation_dic[<span class="string">'up'</span>]))</div><div class="line">	    down_comman = list(set(genes) &amp; set(gene_regulation_dic[<span class="string">'down'</span>]))</div><div class="line">	                                 </div><div class="line">	    nup = str(len(up_comman))</div><div class="line">	    ndown = str(len(down_comman))</div><div class="line">	    path_plot_out.write(<span class="string">"\t"</span>.join([pathway_name, ndown, nup])+<span class="string">'\n'</span>)</div><div class="line">	    col2 = <span class="string">"; "</span>.join(down_comman)</div><div class="line">	    col3 = <span class="string">"; "</span>.join(up_comman)</div><div class="line">		path_out.write(<span class="string">"\t"</span>.join([pathway_name, col2, col3])+<span class="string">"\n"</span>)</div><div class="line">		</div><div class="line">	path_plot_out.close()</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://dawnmy.github.io/2016/10/05/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Danny">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Space of a muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/05/hello-world/" itemprop="url">
+                  Hello World
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-05T20:25:11+02:00">
+                2016-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/10/05/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/05/hello-world/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+
+          
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Danny" />
+          <p class="site-author-name" itemprop="name">Danny</p>
+           
+              <p class="site-description motion-element" itemprop="description">A another place for data science</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Danny</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'dreamcatcher-1';
+      var disqus_identifier = 'index.html';
+
+      var disqus_title = "";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+
+    </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

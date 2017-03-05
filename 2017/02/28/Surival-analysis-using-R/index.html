@@ -1,698 +1,245 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
+    <title>Surival analysis using R | Space of a muser</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="Explore data enjoy life">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Surival analysis using R | Space of a muser">
+    <meta name="twitter:description" content="Explore data enjoy life">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Surival analysis using R | Space of a muser">
+    <meta property="og:description" content="Explore data enjoy life">
+
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
+    <meta name="author" content="Danny">
     
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+    <link rel="icon" href="/images/avatar-small.png">
+    
 
+    <meta name="generator" content="hexo"/>
+    
 
+    <link rel="canonical" href="http://dawnmy.github.io/2017/02/28/Surival-analysis-using-R/"/><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="TCGA," />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
-
-
-
-<meta name="description" content="以下代码参考生信技能树论坛
-12345678910111213141516171819rm(list=ls())setwd(&apos;./TCGA&apos;)###读取自己的TCGA数据dat=read.csv(&apos;3expforRsuoxiao.csv&apos;,header =TRUE,row.names= 1,sep = &quot;,&quot;)##基因不能太多rt=read.csv(&apos;3osforR.csv&apos;,header =TR">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Surival analysis using R">
-<meta property="og:url" content="http://dawnmy.github.io/2017/02/28/Surival-analysis-using-R/index.html">
-<meta property="og:site_name" content="Space of a muser">
-<meta property="og:description" content="以下代码参考生信技能树论坛
-12345678910111213141516171819rm(list=ls())setwd(&apos;./TCGA&apos;)###读取自己的TCGA数据dat=read.csv(&apos;3expforRsuoxiao.csv&apos;,header =TRUE,row.names= 1,sep = &quot;,&quot;)##基因不能太多rt=read.csv(&apos;3osforR.csv&apos;,header =TR">
-<meta property="og:updated_time" content="2017-02-28T21:34:47.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Surival analysis using R">
-<meta name="twitter:description" content="以下代码参考生信技能树论坛
-12345678910111213141516171819rm(list=ls())setwd(&apos;./TCGA&apos;)###读取自己的TCGA数据dat=read.csv(&apos;3expforRsuoxiao.csv&apos;,header =TRUE,row.names= 1,sep = &quot;,&quot;)##基因不能太多rt=read.csv(&apos;3osforR.csv&apos;,header =TR">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://dawnmy.github.io/2017/02/28/Surival-analysis-using-R/"/>
-
-
-
-
-
-  <title> Surival analysis using R | Space of a muser </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+      
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<body class="home-template no-js">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
 
-  
-
-
-
-
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-44649121-2', 'auto');
-  ga('send', 'pageview');
-</script>
-
-
-
-
-
-
-
-
-
-
-
-  
-  
     
-  
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Space of a muser</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">Insight</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+        <a href="/" title="前往 Space of a muser 的主页"><img src="/images/hiking.jpg" width="80" alt="Space of a muser logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Space of a muser">Space of a muser</a></h1>
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
+        <span class="panel-cover__subtitle panel-subtitle">Insight</span>
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Explore data enjoy life</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
 
-      
-    </ul>
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/favourite">Love</a></li>
+            
+              <li class="navigation__item"><a href="/favourite/time.html">Timeline</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
   
 
+  <!-- Github -->
   
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+
+
+  </ul>
 </nav>
 
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://dawnmy.github.io/2017/02/28/Surival-analysis-using-R/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Danny">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/hiking.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Space of a muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                Surival analysis using R
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-28T22:14:25+01:00">
-                2017-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/02/28/Surival-analysis-using-R/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/28/Surival-analysis-using-R/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
 
+      </div>
 
-    <div class="post-body" itemprop="articleBody">
+    </div>
 
-      
-      
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div>
+</header>
 
-      
-        <p>以下代码参考<a href="http://www.biotrainee.com/thread-966-1-1.html" target="_blank" rel="external">生信技能树论坛</a></p>
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-02-28T21:14:25.000Z" class="post-list__meta--date date">2017-02-28</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/TCGA/">TCGA</a>
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">Surival analysis using R</h1>
+  </header>
+
+  <section class="post">
+    <p>以下代码参考<a href="http://www.biotrainee.com/thread-966-1-1.html" target="_blank" rel="external">生信技能树论坛</a></p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">rm(list=ls())</div><div class="line">setwd(<span class="string">'./TCGA'</span>)</div><div class="line"><span class="comment">###读取自己的TCGA数据</span></div><div class="line">dat=read.csv(<span class="string">'3expforRsuoxiao.csv'</span>,header =<span class="literal">TRUE</span>,row.names= <span class="number">1</span>,sep = <span class="string">","</span>)<span class="comment">##基因不能太多</span></div><div class="line">rt=read.csv(<span class="string">'3osforR.csv'</span>,header =<span class="literal">TRUE</span>,row.names= <span class="number">1</span>,sep = <span class="string">","</span>)<span class="comment">##,header =TRUE第一行,row.names= 1第一列  </span></div><div class="line">os=rt[,<span class="number">2</span>]  <span class="comment">##（时间）</span></div><div class="line">STATUS=rt[,<span class="number">1</span>] <span class="comment">###（生存的event）</span></div><div class="line">log_rank_p &lt;- apply(dat,  <span class="number">1</span>, <span class="keyword">function</span>(values1)&#123;  <span class="comment">## for a matrix 1 indicates rows, 2 indicates columns, c(1, 2) indicates rows and columns.</span></div><div class="line">  group=ifelse(values1&gt;median(values1),<span class="string">'high'</span>,<span class="string">'low'</span>)  <span class="comment">##分高低组  ifelse(test, yes, no)test， an object which can be coerced to logical mode.</span></div><div class="line">  survival_dat &lt;- data.frame(group=group,os=os,STATUS=STATUS,stringsAsFactors = <span class="literal">F</span>)  <span class="comment">##行，列的生存时间， 即 基因表达值分成了高低组，和相应</span></div><div class="line">  <span class="keyword">library</span>(survival)<span class="comment">###表格可以任意添加参数，如性别，年龄等。</span></div><div class="line">  my.surv &lt;- Surv(survival_dat$os,survival_dat$STATUS)  <span class="comment">###my.surv &lt;- Surv(OS_MONTHS,OS_STATUS=='LIVING') </span></div><div class="line">  <span class="comment">##这个Surv函数第一个参数必须是数值型的时间，第二个参数是逻辑向量，1,0表示死亡与否</span></div><div class="line">  kmfit2 &lt;- survfit(my.surv~survival_dat$group)  <span class="comment">##### 生存数据对象~表达高低 创建KM生存曲线 $绝对引用？</span></div><div class="line">  data.survdiff=survdiff(my.surv~group,data = survival_dat) <span class="comment">##data = survival_dat 单个的表达高低与生存数据对象</span></div><div class="line">  <span class="comment">##用于不同组的统计检验 Two-sample test  survdiff(Surv(futime, fustat) ~ rx,data=ovarian)#生存数据对象~表达高低</span></div><div class="line">  p.val = <span class="number">1</span> - pchisq(data.survdiff$chisq, length(data.survdiff$n) - <span class="number">1</span>)</div><div class="line">&#125;)</div><div class="line">names(log_rank_p[log_rank_p&lt;<span class="number">0.05</span>])</div></pre></td></tr></table></figure>
 <p>第二个以TCGA中的Pancreatic Adenocarcinoma样本为例的surival分析</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line"><span class="comment">####teach code####</span></div><div class="line"><span class="keyword">library</span>(survival)</div><div class="line"><span class="comment">#read expression data and modify its class and colnames/rownames</span></div><div class="line"></div><div class="line"><span class="comment">#PAAD_gene_expression.csv数据已经经过Z_转换的数据。</span></div><div class="line"></div><div class="line">z_rna &lt;- read.csv(file=<span class="string">"PAAD_gene_expression.csv"</span>,header = <span class="literal">T</span>,row.names = <span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="comment">#clincal是所有样本的临床信息</span></div><div class="line">clinical &lt;- t(read.table(<span class="string">"PAAD.merged_only_clinical_clin_format.txt"</span>,header=<span class="literal">T</span>, row.names=<span class="number">1</span>, sep=<span class="string">"\t"</span>,stringsAsFactors = <span class="literal">F</span>))</div><div class="line"></div><div class="line">clinical &lt;- as.data.frame(clinical)</div><div class="line"><span class="comment">#transform rna data's colnames and rownames</span></div><div class="line">z_rna &lt;- as.matrix(z_rna)</div><div class="line">colnames(z_rna) &lt;- gsub(<span class="string">"\\."</span>,<span class="string">"-"</span>,colnames(z_rna))</div><div class="line">rownames(z_rna) &lt;- sapply(rownames(z_rna), <span class="keyword">function</span>(x) unlist(strsplit(x,<span class="string">"\\|"</span>))[[<span class="number">1</span>]])</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#check the type of cancer data</span></div><div class="line"><span class="comment">#table(substr(colnames(z_rna),14,15))</span></div><div class="line"><span class="comment">#grep patient ID in clinical data</span></div><div class="line">clinical$IDs &lt;- toupper(clinical$patient.bcr_patient_barcode)</div><div class="line">sum(clinical$IDs %<span class="keyword">in</span>% colnames(z_rna))<span class="comment"># we have 178 patients that we could use</span></div><div class="line"><span class="comment">#grep information for survival</span></div><div class="line"></div><div class="line">ind_keep &lt;- grep(<span class="string">"days_to_death"</span>,colnames(clinical))</div><div class="line">death &lt;- as.matrix(clinical[,ind_keep])</div><div class="line">death_collapsed &lt;- apply(death,<span class="number">1</span>,FUN = <span class="keyword">function</span>(x)max(x,na.rm = <span class="literal">T</span>)) <span class="comment">#提取最大值</span></div><div class="line">death_collapsed&lt;- as.numeric(death_collapsed)</div><div class="line"></div><div class="line"><span class="comment">#last follow_up information</span></div><div class="line">ind_keep &lt;- grep(<span class="string">"days_to_last_followup"</span>,colnames(clinical))</div><div class="line">fl &lt;- as.matrix(clinical[,ind_keep])</div><div class="line">fl_collapsed &lt;- apply(fl,<span class="number">1</span>,FUN = <span class="keyword">function</span>(x)max(x,na.rm = <span class="literal">T</span>))</div><div class="line">fl_collapsed &lt;- as.numeric(fl_collapsed)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#construct a new dataframe containing all information</span></div><div class="line">all_clin &lt;- data.frame(death_collapsed,fl_collapsed)</div><div class="line">colnames(all_clin) &lt;- c(<span class="string">"death_days"</span>, <span class="string">"followUp_days"</span>)</div><div class="line">all_clin$death_event &lt;- ifelse(clinical$patient.vital_status == <span class="string">"alive"</span>, <span class="number">0</span>,<span class="number">1</span>)</div><div class="line">all_clin$new_death &lt;- apply(all_clin,<span class="number">1</span>,<span class="keyword">function</span>(x)ifelse(x[<span class="number">3</span>]==<span class="number">0</span>,x[<span class="number">2</span>],x[<span class="number">1</span>]))</div><div class="line">table(clinical$patient.vital_status)</div><div class="line">rownames(all_clin) &lt;- clinical$IDs</div><div class="line"><span class="comment">##connect to RNA-seq</span></div><div class="line"><span class="comment"># create event vector for RNASeq data</span></div><div class="line">event_rna &lt;- t(apply(z_rna, <span class="number">1</span>, <span class="keyword">function</span>(x) ifelse(abs(x) &gt; <span class="number">1.96</span>,<span class="number">1</span>,<span class="number">0</span>)))</div><div class="line">in_clin_tum &lt;- match(colnames(z_rna),rownames(all_clin))</div><div class="line">tumor_clinical &lt;- all_clin[in_clin_tum,]</div><div class="line"><span class="comment">#example gene</span></div><div class="line">ind_gene &lt;- which(rownames(z_rna) == <span class="string">"TP53"</span>)</div><div class="line">table(event_rna[ind_gene,])</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">###survival analysis###</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#over_all survival</span></div><div class="line">su_OS &lt;- Surv(as.numeric(tumor_clinical$new_death),as.numeric(tumor_clinical$death_event))</div><div class="line">fit_OS &lt;- survfit(su_OS~event_rna[ind_gene,])</div><div class="line">p &lt;- survdiff(su_OS~event_rna[ind_gene,])</div><div class="line">pv &lt;- ifelse(is.na(p),<span class="keyword">next</span>,(round(<span class="number">1</span> - pchisq(p$chisq, length(p$n) - <span class="number">1</span>),<span class="number">3</span>)))[[<span class="number">1</span>]]</div><div class="line">x1 &lt;- ifelse(is.na(as.numeric(summary(fit_OS)$table[,<span class="string">'median'</span>][<span class="number">1</span>])),<span class="string">"NA"</span>,as.numeric(summary(fit_OS)$table[,<span class="string">'median'</span>][<span class="number">1</span>]))</div><div class="line">x2 &lt;- as.numeric(summary(fit_OS)$table[,<span class="string">'median'</span>][<span class="number">2</span>])</div><div class="line"></div><div class="line"><span class="comment">#get necessary information</span></div><div class="line">summary(fit_OS)</div><div class="line">summary(fit_OS)$table[,<span class="string">'median'</span>]</div><div class="line">summary(fit_OS,times = <span class="number">365</span>)</div><div class="line"><span class="comment">#plot survival curve</span></div><div class="line"></div><div class="line">plot(fit_OS,conf.int=<span class="literal">FALSE</span>,col=c(<span class="string">"black"</span>,<span class="string">"red"</span>),xlab=<span class="string">"Days"</span>,ylab = <span class="string">"Proportion Survival"</span>)</div><div class="line">legend(<span class="number">1800</span>,<span class="number">0.995</span>,legend=paste(<span class="string">"p.value = "</span>,pv[[<span class="number">1</span>]],sep=<span class="string">""</span>),bty=<span class="string">"n"</span>,cex=<span class="number">1.4</span>)</div><div class="line">legend(max(as.numeric(as.character(all_clin$death_days)[in_clin_tum]),na.rm = <span class="literal">T</span>)*<span class="number">0.7</span>,<span class="number">0.94</span>,</div><div class="line">legend=c(paste(<span class="string">"NotAltered="</span>,x1),paste(<span class="string">"Altered="</span>,x2)),bty=<span class="string">"n"</span>,cex=<span class="number">1.3</span>,lwd=<span class="number">3</span>,col=c(<span class="string">"black"</span>,<span class="string">"red"</span>))</div></pre></td></tr></table></figure>
 
-      
-    </div>
+  </section>
 
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/TCGA/" rel="tag"># TCGA</a>
-          
-        </div>
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/02/18/Calculate-the-identity-of-the-BWA-alignments/" rel="next" title="Calculate the identity of the BWA alignments">
-                <i class="fa fa-chevron-left"></i> Calculate the identity of the BWA alignments
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/01/Math-equation-test/" rel="prev" title="Math equation test">
-                Math equation test <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-          
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/hiking.jpg"
-               alt="Danny" />
-          <p class="site-author-name" itemprop="name">Danny</p>
+</article>
+<section class="read-more">
            
-              <p class="site-description motion-element" itemprop="description">Explore data enjoy life</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-        
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">9</span>
-                <span class="site-state-item-name">posts</span>
-              </a>
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/03/01/Math-equation-test/" title="Math equation test">Math equation test</a></h2>
+                <p class="excerpt">
+                
+                $$\frac{\partial u}{\partial t}= h^2 \left( \frac{\partial^2 u}{\partial x^2} +\frac{\partial^2 u}{\partial y^2} +\frac{\partial^2 u}{\partial z^2}\ri
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-03-01T18:00:29.000Z" class="post-list__meta--date date">2017-03-01</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Math/">Math</a>
+</span><a class="btn-border-small" href="/2017/03/01/Math-equation-test/">继续阅读</a></div>
+                           
             </div>
-          
-
-          
-
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">14</span>
-                <span class="site-state-item-name">tags</span>
-              </a>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/02/18/Calculate-the-identity-of-the-BWA-alignments/" title="Calculate the identity of the BWA alignments">Calculate the identity of the BWA alignments</a></h2>
+                <p class="excerpt">
+                
+                Since BWA does not report the similarity of the read to reference, we can use the edit distance tag “NM” to retrieve the information regarding the dif
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-02-18T19:28:36.000Z" class="post-list__meta--date date">2017-02-18</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/BWA-aligner/">BWA aligner</a>, <a class="tag-link" href="/tags/NGS/">NGS</a>, <a class="tag-link" href="/tags/SAM-tag-NM/">SAM tag NM</a>, <a class="tag-link" href="/tags/identity/">identity</a>
+</span><a class="btn-border-small" href="/2017/02/18/Calculate-the-identity-of-the-BWA-alignments/">继续阅读</a></div>
+                       
             </div>
-          
-
-        </nav>
-
         
+     
+   
+   
+  
+</section>
 
-        <div class="links-of-author motion-element">
-          
+            
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'dreamcatcher-1'; 
+      
+  var disqus_identifier = '/2017/02/28/Surival-analysis-using-R/';
+  var disqus_title = 'Surival analysis using R';
+  var disqus_url = 'http://dawnmy.github.io/2017/02/28/Surival-analysis-using-R/';
+  
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          //dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+          dsq.src = 'https://a.disquscdn.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    </span>
+    <span class="footer__copyright">
+        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
+    </span>
+    <span class="footer__copyright">
+        &copy; 2017 - 本站由 <a href="/">@Monniya</a> 创建,
+        使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">hexo-theme-new-vno</a> 主题,
+        修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+    </span>
+</footer>
         </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-
-      
-
     </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Danny</span>
-</div>
-
-
-<div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
-
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
-
-
-        
-
-        
-      </div>
-    </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-    
-  </div>
 
-  
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+	ga('create', 'UA-44649121-2', 'auto');
+	ga('send', 'pageview');
 </script>
 
+    
 
 
-
-
-
-
-
-
-  
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-
-
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'dreamcatcher-1';
-      var disqus_identifier = '2017/02/28/Surival-analysis-using-R/';
-
-      var disqus_title = "Surival analysis using R";
-
-
-      function run_disqus_script(disqus_script) {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-
-      
-        var disqus_config = function () {
-            this.page.url = disqus_url;
-            this.page.identifier = disqus_identifier;
-            this.page.title = disqus_title;
-        };
-        run_disqus_script('embed.js');
-      
-
-    </script>
-  
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    
+    </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -710,17 +257,6 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
-  
-
-
-  
-
-  
-
-  
-
-
-  
-
+    
 </body>
 </html>

@@ -5956,7 +5956,7 @@ html {
 body {
   font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Helvetica", "Arial", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-size: 1em;
-  color: #666;
+  color: #555;
   -webkit-font-smoothing: antialiased;
 }
 ::selection {
@@ -6106,8 +6106,8 @@ pre code {
 }
 .excerpt {
   margin: 0;
-  font-size: 0.9em;
-  color: #666;
+  font-size: 1.1em;
+  color: #555;
 }
 .intro {
   font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Arial", "Helvetica", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;

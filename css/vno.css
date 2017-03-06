@@ -6106,8 +6106,9 @@ pre code {
 }
 .excerpt {
   margin: 0;
-  font-size: 1.1em;
+  font-size: 1em;
   color: #555;
+  text-align: justify;
 }
 .intro {
   font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Arial", "Helvetica", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;

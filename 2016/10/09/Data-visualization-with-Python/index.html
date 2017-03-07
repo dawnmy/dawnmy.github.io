@@ -163,6 +163,34 @@
 </pre></td><td class="code"><pre><span class="line">ax1.set_xticklabels(labels, rotation=<span class="number">60</span>, ha=<span class="string">'left'</span>)</span>
 </pre></td></tr></table></figure>
 <p>不过改为Truetype字体后有个问题就是字体貌似会有偏移，暂时没有找到解决方案，我的OS是macOS用的Python3。希望能有解决方案，也许随着matplotlib的更新会解决。</p>
+<p>以下是一个🌹画boxplot的完整例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+</pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span>
+<span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span>
+<span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span>
+<span class="line"></span>
+<span class="line">df = pd.read_csv(<span class="string">"./paired_exp.txt"</span>, sep=<span class="string">"\t"</span>)</span>
+<span class="line">df[<span class="string">'tissue'</span>] = [<span class="string">"cancer"</span>, <span class="string">"control"</span>]*<span class="number">15</span></span>
+<span class="line">plt.figure(figsize=(<span class="number">6</span>, <span class="number">6</span>))</span>
+<span class="line"><span class="comment">#plt.rcParams['pdf.fonttype'] = 42</span></span>
+<span class="line">sns.set(style=<span class="string">"whitegrid"</span>, context=<span class="string">"poster"</span>, font_scale=<span class="number">2</span>)</span>
+<span class="line"></span>
+<span class="line">ax = sns.boxplot(x=<span class="string">"tissue"</span>, y=<span class="string">"geneA"</span>, data=df, palette=<span class="string">"husl"</span>, linewidth=<span class="number">1.5</span>)</span>
+<span class="line">plt.ylim(<span class="number">0</span>, <span class="number">700000</span>)</span>
+<span class="line">plt.savefig(<span class="string">"./exp_boxplot.pdf"</span>, bbox_inches=<span class="string">'tight'</span>)</span>
+</pre></td></tr></table></figure>
 
   </section>
 

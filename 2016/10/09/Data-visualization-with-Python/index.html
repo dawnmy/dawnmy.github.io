@@ -141,19 +141,27 @@
 <ul>
 <li>关于pdf的图中启用Truetype字体方便编辑</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.rcParams[<span class="string">'pdf.fonttype'</span>] = <span class="number">42</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">plt.rcParams[<span class="string">'pdf.fonttype'</span>] = <span class="number">42</span></span>
+</pre></td></tr></table></figure>
 <ul>
 <li>barplot的legend大小位置设置</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.legend(loc=<span class="string">'lower right'</span>, prop=&#123;<span class="string">'size'</span>: <span class="number">25</span>&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">plt.legend(loc=<span class="string">'lower right'</span>, prop=&#123;<span class="string">'size'</span>: <span class="number">25</span>&#125;)</span>
+</pre></td></tr></table></figure>
 <ul>
 <li>heatmap的colorbar的大小调整</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.colorbar(im, fraction=<span class="number">0.046</span>, pad=<span class="number">0.04</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">plt.colorbar(im, fraction=<span class="number">0.046</span>, pad=<span class="number">0.04</span>)</span>
+</pre></td></tr></table></figure>
 <ul>
 <li>轴刻度标签对齐方式</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ax1.set_xticklabels(labels, rotation=<span class="number">60</span>, ha=<span class="string">'left'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">ax1.set_xticklabels(labels, rotation=<span class="number">60</span>, ha=<span class="string">'left'</span>)</span>
+</pre></td></tr></table></figure>
 <p>不过改为Truetype字体后有个问题就是字体貌似会有偏移，暂时没有找到解决方案，我的OS是macOS用的Python3。希望能有解决方案，也许随着matplotlib的更新会解决。</p>
 
   </section>

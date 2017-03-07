@@ -142,18 +142,24 @@
 <blockquote>
 <p>To select one column in a datafram with multi-level index, you can use a tuple containing the names of the column in different levels to access desired column.</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df1 = df.groupby([(<span class="string">'level0'</span>,<span class="string">'level1'</span>)]).sum()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">df1 = df.groupby([(<span class="string">'level0'</span>,<span class="string">'level1'</span>)]).sum()</span>
+</pre></td></tr></table></figure>
 <ul>
 <li>the use of <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.reset_index.html" target="_blank" rel="external">reset_index</a></li>
 </ul>
 <blockquote>
 <p>Convert index level 0 to a column</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.reset_index(level=<span class="number">0</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">df.reset_index(level=<span class="number">0</span>)</span>
+</pre></td></tr></table></figure>
 <ul>
 <li>Retrieve the index from multi-level index dataframe</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.index.get_level_values(<span class="number">0</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">df.index.get_level_values(<span class="number">0</span>)</span>
+</pre></td></tr></table></figure>
 <p><img src="http://www.lovethispic.com/uploaded_images/82613-Beautiful-Spring-Flowers.jpg" alt=""></p>
 
   </section>

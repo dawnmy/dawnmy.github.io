@@ -4,7 +4,7 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>Space of a muser | Insight</title>
+    <title>R coding tricks | Space of a muser</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -15,11 +15,11 @@
     <meta name="description" content="Explore data enjoy life">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Space of a muser | Insight">
+    <meta name="twitter:title" content="R coding tricks | Space of a muser">
     <meta name="twitter:description" content="Explore data enjoy life">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Space of a muser | Insight">
+    <meta property="og:title" content="R coding tricks | Space of a muser">
     <meta property="og:description" content="Explore data enjoy life">
 
     
@@ -35,7 +35,7 @@
     <meta name="generator" content="hexo"/>
     
 
-    <link rel="canonical" href="http://dawnmy.github.io"/><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <link rel="canonical" href="http://dawnmy.github.io/2017/03/13/R-coding-tricks/"/><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
     
       
@@ -120,45 +120,57 @@
 
     <div class="content-wrapper">
         <div class="content-wrapper__inner">
-            <div class="main-post-list">
-    
-  <ol class="post-list">
-  
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2017/03/13/R-coding-tricks/" title="link to post.title">R coding tricks</a></h2>
-      <p class="excerpt">
-    
-      “[“ is actually a function in R. When using FUN=”[“, the first argument to “[“ is the current element of the list (being iterated over), ie, the object being subsetted. While the subsequent arguments 
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2017-03-12T23:07:54.000Z" class="post-list__meta--date date">2017-03-13</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-03-12T23:07:54.000Z" class="post-list__meta--date date">2017-03-13</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
   <a class="tag-link" href="/tags/R/">R</a>
-</span><a class="btn-border-small" href="/2017/03/13/R-coding-tricks/">继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-  
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2017/03/01/Math-equation-test/" title="link to post.title">Math equation test</a></h2>
-      <p class="excerpt">
-    
-      $$\frac{\partial u}{\partial t}= h^2 \left( \frac{\partial^2 u}{\partial x^2} +\frac{\partial^2 u}{\partial y^2} +\frac{\partial^2 u}{\partial z^2}\right)$$
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">R coding tricks</h1>
+  </header>
 
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2017-03-01T18:00:29.000Z" class="post-list__meta--date date">2017-03-01</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <section class="post">
+    <p>“[“ is actually a function in R. When using FUN=”[“, the first argument to “[“ is the current element of the list (being iterated over), ie, the object being subsetted. While the subsequent arguments are the indexes to “[“</p>
+<p>Here is a trick to split string in vector and take the first part of the string. </p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">y &lt;- sapply(strsplit(x, <span class="string">":"</span>), <span class="string">"["</span>, <span class="number">1</span>)</span>
+</pre></td></tr></table></figure>
+
+  </section>
+
+</article>
+<section class="read-more">
+           
+    
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/03/01/Math-equation-test/" title="Math equation test">Math equation test</a></h2>
+                <!-- p class="excerpt">
+                
+                $$\frac{\partial u}{\partial t}= h^2 \left( \frac{\partial^2 u}{\partial x^2} +\frac{\partial^2 u}{\partial y^2} +\frac{\partial^2 u}{\partial z^2}\ri
+                &hellip;
+                </p -->
+                <div class="post-list__meta"><time datetime="2017-03-01T18:00:29.000Z" class="post-list__meta--date date">2017-03-01</time> &#8226;
+                <span class="post-list__meta--tags tags">于&nbsp;
   <a class="tag-link" href="/tags/Math/">Math</a>
-</span><a class="btn-border-small" href="/2017/03/01/Math-equation-test/">继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
+</span><!-- a class="btn-border-small" href="/2017/03/01/Math-equation-test/">继续阅读</a--></div>
+                       
+            </div>
+        
+     
+   
+   
   
-    
-  </ol>
-
-
-
-</div>
+</section>
 
 
             
@@ -167,12 +179,16 @@
   <script type="text/javascript">
       var disqus_shortname = 'dreamcatcher-1'; 
       
+  var disqus_identifier = '/2017/03/13/R-coding-tricks/';
+  var disqus_title = 'R coding tricks';
+  var disqus_url = 'http://dawnmy.github.io/2017/03/13/R-coding-tricks/';
+  
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
           //dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-          dsq.src = 'https://a.disquscdn.com/count.js';
+          dsq.src = 'https://a.disquscdn.com/embed.js';
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
       })();
   </script>
@@ -214,24 +230,7 @@
 
     <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
     
-    </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 </body>
 </html>

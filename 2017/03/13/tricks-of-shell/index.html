@@ -4,7 +4,7 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>R coding tricks | Space of a muser</title>
+    <title>tricks of shell | Space of a muser</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -15,11 +15,11 @@
     <meta name="description" content="Explore data enjoy life">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="R coding tricks | Space of a muser">
+    <meta name="twitter:title" content="tricks of shell | Space of a muser">
     <meta name="twitter:description" content="Explore data enjoy life">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="R coding tricks | Space of a muser">
+    <meta property="og:title" content="tricks of shell | Space of a muser">
     <meta property="og:description" content="Explore data enjoy life">
 
     
@@ -35,7 +35,7 @@
     <meta name="generator" content="hexo"/>
     
 
-    <link rel="canonical" href="http://dawnmy.github.io/2017/03/13/R-coding-tricks/"/><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <link rel="canonical" href="http://dawnmy.github.io/2017/03/13/tricks-of-shell/"/><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
     
       
@@ -124,22 +124,23 @@
 
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2017-03-12T23:07:54.000Z" class="post-list__meta--date date">2017-03-13</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
-  <a class="tag-link" href="/tags/R/">R</a>
+      <time datetime="2017-03-13T22:55:43.000Z" class="post-list__meta--date date">2017-03-13</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/shell/">shell</a>
  </span>
       <span class="page-pv">
       &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
       </span> 
    
     </div>
-    <h1 class="post-title">R coding tricks</h1>
+    <h1 class="post-title">tricks of shell</h1>
   </header>
 
   <section class="post">
-    <p>“[“ is actually a function in R. When using FUN=”[“, the first argument to “[“ is the current element of the list (being iterated over), ie, the object being subsetted. While the subsequent arguments are the indexes to “[“</p>
-<p>Here is a trick to split string in vector and take the first part of the string. </p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span>
-</pre></td><td class="code"><pre><span class="line">y &lt;- sapply(strsplit(x, <span class="string">":"</span>), <span class="string">"["</span>, <span class="number">1</span>)</span>
+    <p>The combination of find print0 and xargs -0 is extremely useful when dealing with multiple files which may contain space in file name. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+</pre></td><td class="code"><pre><span class="line">find genomes/ -name &apos;*.fa&apos; -print0 | \</span>
+<span class="line">    xargs -0 -I&#123;&#125; -n1 kraken-build --add-to-library &#123;&#125; --db $DBNAME</span>
 </pre></td></tr></table></figure>
 
   </section>
@@ -148,39 +149,21 @@
 <section class="read-more">
            
     
-               
-            <div class="read-more-item">
-                <span class="read-more-item-dim">最近的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2017/03/13/tricks-of-shell/" title="tricks of shell">tricks of shell</a></h2>
-                <!-- p class="excerpt">
-                
-                The combination of find print0 and xargs -0 is extremely useful when dealing with multiple files which may contain space in file name. 
-1
-2
-find genom
-                &hellip;
-                </p -->
-                <div class="post-list__meta"><time datetime="2017-03-13T22:55:43.000Z" class="post-list__meta--date date">2017-03-13</time> &#8226;
-                <span class="post-list__meta--tags tags">于&nbsp;
-  <a class="tag-link" href="/tags/shell/">shell</a>
-</span><!-- a class="btn-border-small" href="/2017/03/13/tricks-of-shell/">继续阅读</a --></div>
-                           
-            </div>
         
         
                
             <div class="read-more-item">
                 <span class="read-more-item-dim">更早的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2017/03/01/Math-equation-test/" title="Math equation test">Math equation test</a></h2>
+                <h2 class="post-list__post-title post-title"><a href="/2017/03/13/R-coding-tricks/" title="R coding tricks">R coding tricks</a></h2>
                 <!-- p class="excerpt">
                 
-                $$\frac{\partial u}{\partial t}= h^2 \left( \frac{\partial^2 u}{\partial x^2} +\frac{\partial^2 u}{\partial y^2} +\frac{\partial^2 u}{\partial z^2}\ri
+                “[“ is actually a function in R. When using FUN=”[“, the first argument to “[“ is the current element of the list (being iterated over), ie, the objec
                 &hellip;
                 </p -->
-                <div class="post-list__meta"><time datetime="2017-03-01T18:00:29.000Z" class="post-list__meta--date date">2017-03-01</time> &#8226;
+                <div class="post-list__meta"><time datetime="2017-03-12T23:07:54.000Z" class="post-list__meta--date date">2017-03-13</time> &#8226;
                 <span class="post-list__meta--tags tags">于&nbsp;
-  <a class="tag-link" href="/tags/Math/">Math</a>
-</span><!-- a class="btn-border-small" href="/2017/03/01/Math-equation-test/">继续阅读</a--></div>
+  <a class="tag-link" href="/tags/R/">R</a>
+</span><!-- a class="btn-border-small" href="/2017/03/13/R-coding-tricks/">继续阅读</a--></div>
                        
             </div>
         
@@ -197,9 +180,9 @@ find genom
   <script type="text/javascript">
       var disqus_shortname = 'dreamcatcher-1'; 
       
-  var disqus_identifier = '/2017/03/13/R-coding-tricks/';
-  var disqus_title = 'R coding tricks';
-  var disqus_url = 'http://dawnmy.github.io/2017/03/13/R-coding-tricks/';
+  var disqus_identifier = '/2017/03/13/tricks-of-shell/';
+  var disqus_title = 'tricks of shell';
+  var disqus_url = 'http://dawnmy.github.io/2017/03/13/tricks-of-shell/';
   
 
       /* * * DON'T EDIT BELOW THIS LINE * * */

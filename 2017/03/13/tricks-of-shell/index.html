@@ -136,11 +136,83 @@
   </header>
 
   <section class="post">
-    <p>The combination of find print0 and xargs -0 is extremely useful when dealing with multiple files which may contain space in file name. </p>
+    <h4 id="Combining-find-with-xargs"><a href="#Combining-find-with-xargs" class="headerlink" title="Combining find with xargs"></a>Combining find with xargs</h4><blockquote>
+<p>The combination of find print0 and xargs -0 is extremely useful when dealing with multiple files which may contain space in file name. </p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
 <span class="line">2</span>
 </pre></td><td class="code"><pre><span class="line">find genomes/ -name &apos;*.fa&apos; -print0 | \</span>
 <span class="line">    xargs -0 -I&#123;&#125; -n1 kraken-build --add-to-library &#123;&#125; --db $DBNAME</span>
+</pre></td></tr></table></figure>
+<h4 id="Using-NR-FNR-in-awk"><a href="#Using-NR-FNR-in-awk" class="headerlink" title="Using NR==FNR in awk"></a>Using NR==FNR in awk</h4><blockquote>
+<p>Filtering the file2 based on specific fields with a given pattern list file1.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+</pre></td><td class="code"><pre><span class="line">awk -F&quot;\t&quot; &apos;NR==FNR&#123;a[$0];next&#125;($5 in a)&apos; OFS=&quot;\t&quot; file1 file2</span>
+<span class="line"></span>
+<span class="line">awk -F&quot;\t&quot; &apos;NR==FNR&#123;a[$0];next&#125;&#123;if ($5 in a)&#123;$5=$1&#125;print $1,$5&#125;&apos; OFS=&quot;\t&quot; file1 file2</span>
+</pre></td></tr></table></figure>
+<h4 id="Concatenating-several-stdouts"><a href="#Concatenating-several-stdouts" class="headerlink" title="Concatenating several stdouts"></a>Concatenating several stdouts</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+</pre></td><td class="code"><pre><span class="line">(awk ...; paste ...)</span>
+<span class="line">cat &lt;(awk...) &lt;(sed...)</span>
+</pre></td></tr></table></figure>
+<h4 id="Tricks-of-paste"><a href="#Tricks-of-paste" class="headerlink" title="Tricks of paste"></a>Tricks of paste</h4><blockquote>
+<p>Coverting each n rows as 1 row with n cols.  - indicates treating stdin as file</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">paste -d&quot;\t&quot; - - - -</span>
+</pre></td></tr></table></figure>
+<h4 id="Using-next-in-awk"><a href="#Using-next-in-awk" class="headerlink" title="Using next in awk"></a>Using next in awk</h4><blockquote>
+<p>We have file1 as follows<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+</pre></td><td class="code"><pre><span class="line">day1</span>
+<span class="line">task1	success</span>
+<span class="line">task2	success</span>
+<span class="line">task3	failed</span>
+<span class="line">day2</span>
+<span class="line">task1	success</span>
+<span class="line">task2	failed</span>
+<span class="line">task3	failed</span>
+<span class="line">day3</span>
+<span class="line">task1	success</span>
+<span class="line">task2	success</span>
+<span class="line">task3	success</span>
+</pre></td></tr></table></figure></p>
+</blockquote>
+<p>but we want this<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+</pre></td><td class="code"><pre><span class="line">day1	task1	success</span>
+<span class="line">day1	task2	success</span>
+<span class="line">day1	task3	failed</span>
+<span class="line">day2	task1	success</span>
+<span class="line">day2	task2	failed</span>
+<span class="line">day2	task3	failed</span>
+<span class="line">day3	task1	success</span>
+<span class="line">day3	task2	success</span>
+<span class="line">day3	task3	success</span>
+</pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">awk &apos;/^day/&#123;d=$0;next;&#125;&#123;print d, $1, $2&#125;&apos; OFS=&quot;\t&quot; file1</span>
 </pre></td></tr></table></figure>
 
   </section>
@@ -231,7 +303,24 @@
 
     <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
     
-    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
     
 </body>
 </html>

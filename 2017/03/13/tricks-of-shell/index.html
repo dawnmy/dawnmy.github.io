@@ -4,7 +4,7 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>tricks of shell | Space of a muser</title>
+    <title>Tricks of shell | Space of a muser</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -15,11 +15,11 @@
     <meta name="description" content="Enjoy life, relish the moment!">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="tricks of shell | Space of a muser">
+    <meta name="twitter:title" content="Tricks of shell | Space of a muser">
     <meta name="twitter:description" content="Enjoy life, relish the moment!">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="tricks of shell | Space of a muser">
+    <meta property="og:title" content="Tricks of shell | Space of a muser">
     <meta property="og:description" content="Enjoy life, relish the moment!">
 
     
@@ -132,11 +132,12 @@
       </span> 
    
     </div>
-    <h1 class="post-title">tricks of shell</h1>
+    <h1 class="post-title">Tricks of shell</h1>
   </header>
 
   <section class="post">
-    <h3 id="Combining-find-with-xargs"><a href="#Combining-find-with-xargs" class="headerlink" title="Combining find with xargs"></a>Combining find with xargs</h3><blockquote>
+    <p>Note: some comands refer to commandlinefu website</p>
+<h3 id="Combining-find-with-xargs"><a href="#Combining-find-with-xargs" class="headerlink" title="Combining find with xargs"></a>Combining find with xargs</h3><blockquote>
 <p>The combination of find print0 and xargs -0 is extremely useful when dealing with multiple files which may contain space in file name. </p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
@@ -214,6 +215,84 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
 </pre></td><td class="code"><pre><span class="line">awk &apos;/^day/&#123;d=$0;next;&#125;&#123;print d, $1, $2&#125;&apos; OFS=&quot;\t&quot; file1</span>
 </pre></td></tr></table></figure>
+<h3 id="rename-a-file-from-old-to-new-name"><a href="#rename-a-file-from-old-to-new-name" class="headerlink" title="rename a file from old to new name"></a>rename a file from old to new name</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">mv filename.&#123;old,new&#125;</span>
+</pre></td></tr></table></figure>
+<h3 id="retrieve-the-external-IP-address"><a href="#retrieve-the-external-IP-address" class="headerlink" title="retrieve the external IP address"></a>retrieve the external IP address</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">curl ifconfig.me</span>
+</pre></td></tr></table></figure>
+<h3 id="remove-all-files-do-not-match-given-extensions-from-a-folder"><a href="#remove-all-files-do-not-match-given-extensions-from-a-folder" class="headerlink" title="remove all files do not match given extensions from a folder"></a>remove all files do not match given extensions from a folder</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">rm !(*.foo|*.bar|*.baz)</span>
+</pre></td></tr></table></figure>
+<h3 id="create-a-script-of-the-last-command"><a href="#create-a-script-of-the-last-command" class="headerlink" title="create a script of the last command"></a>create a script of the last command</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">echo &quot;!!&quot; &gt; last.sh</span>
+</pre></td></tr></table></figure>
+<h3 id="reuse-last-command"><a href="#reuse-last-command" class="headerlink" title="reuse last command"></a>reuse last command</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+</pre></td><td class="code"><pre><span class="line"># all parameters</span>
+<span class="line">!*</span>
+<span class="line"># last parameters</span>
+<span class="line">!$</span>
+<span class="line"># nth parameters</span>
+<span class="line">!:n</span>
+<span class="line"># reuse but replace the matched part with new string, usually to correct the typo</span>
+<span class="line">^foo^boo</span>
+<span class="line"># the last command without arguments</span>
+<span class="line">!:-</span>
+</pre></td></tr></table></figure>
+<h3 id="Backticks-are-evil"><a href="#Backticks-are-evil" class="headerlink" title="Backticks (``) are evil"></a>Backticks (``) are evil</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+</pre></td><td class="code"><pre><span class="line">echo &quot;The date is: $(date +%D)&quot;</span>
+<span class="line"></span>
+<span class="line"># This is a simple example of using proper command nesting using $() over ``. There are a number of advantages of $() over backticks. First, they can be easily nested without escapes:</span>
+<span class="line">program1 $(program2 $(program3 $(program4)))</span>
+<span class="line">#versus</span>
+<span class="line">program1 `program2 \`program3 \`program4\`\``</span>
+<span class="line"># Second, they&apos;re easier to read, then trying to decipher the difference between the backtick and the singlequote: `&apos;. The only drawback $() suffers from is lack of total portability. If your script must be portable to the archaic Bourne shell, or old versions of the C-shell or Korn shell, then backticks are appropriate, otherwise, we should all get into the habit of $(). Your future script maintainers will thank you for producing cleaner code.</span>
+</pre></td></tr></table></figure>
+<h3 id="Display-a-block-of-text-with-matched-range"><a href="#Display-a-block-of-text-with-matched-range" class="headerlink" title="Display a block of text with matched range"></a>Display a block of text with matched range</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">awk &apos;/start_pattern/,/stop_pattern/&apos; file.txt</span>
+</pre></td></tr></table></figure>
+<h3 id="remove-duplicate-entries-without-sorting"><a href="#remove-duplicate-entries-without-sorting" class="headerlink" title="remove duplicate entries without sorting"></a>remove duplicate entries without sorting</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+</pre></td><td class="code"><pre><span class="line">awk &apos;!x[$0]++&apos; file</span>
+<span class="line">awk &apos;!x[$1]++&apos; file</span>
+</pre></td></tr></table></figure>
+<h3 id="Find-Duplicate-Files-based-on-size-first-then-MD5-hash"><a href="#Find-Duplicate-Files-based-on-size-first-then-MD5-hash" class="headerlink" title="Find Duplicate Files (based on size first, then MD5 hash)"></a>Find Duplicate Files (based on size first, then MD5 hash)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+</pre></td><td class="code"><pre><span class="line">find -not -empty -type f -printf &quot;%s\n&quot; | sort -rn | uniq -d | xargs -I&#123;&#125; -n1 find -type f -size &#123;&#125;c -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate</span>
+<span class="line"></span>
+<span class="line">fdupes -r .</span>
+</pre></td></tr></table></figure>
+<h3 id="Define-a-quick-calculator-function"><a href="#Define-a-quick-calculator-function" class="headerlink" title="Define a quick calculator function"></a>Define a quick calculator function</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">? () &#123; echo &quot;$*&quot; | bc -l; &#125;</span>
+</pre></td></tr></table></figure>
+<h3 id="recursively-remove-all-empty-folders"><a href="#recursively-remove-all-empty-folders" class="headerlink" title="recursively remove all empty folders"></a>recursively remove all empty folders</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">find . -type d -empty -delete</span>
+</pre></td></tr></table></figure>
+<h3 id="create-a-quick-bak-file"><a href="#create-a-quick-bak-file" class="headerlink" title="create a quick bak file"></a>create a quick bak file</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">cp file.txt&#123;,.bak&#125;</span>
+</pre></td></tr></table></figure>
+<h3 id="Search-recursively-to-find-a-word-or-phrase-in-certain-file-types-such-as-C-code"><a href="#Search-recursively-to-find-a-word-or-phrase-in-certain-file-types-such-as-C-code" class="headerlink" title="Search recursively to find a word or phrase in certain file types, such as C code"></a>Search recursively to find a word or phrase in certain file types, such as C code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">find . -name &quot;*.[ch]&quot; -exec grep -i -H &quot;search pharse&quot; &#123;&#125; \;</span>
+</pre></td></tr></table></figure>
+<h3 id="Exclude-multiple-columns-using-AWK"><a href="#Exclude-multiple-columns-using-AWK" class="headerlink" title="Exclude multiple columns using AWK"></a>Exclude multiple columns using AWK</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">awk &apos;&#123;$1=$3=&quot;&quot;&#125;1&apos; file</span>
+</pre></td></tr></table></figure>
 
   </section>
 
@@ -253,7 +332,7 @@
       var disqus_shortname = 'dreamcatcher-1'; 
       
   var disqus_identifier = '/2017/03/13/tricks-of-shell/';
-  var disqus_title = 'tricks of shell';
+  var disqus_title = 'Tricks of shell';
   var disqus_url = 'http://dawnmy.github.io/2017/03/13/tricks-of-shell/';
   
 

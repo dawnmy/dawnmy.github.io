@@ -136,7 +136,7 @@
   </header>
 
   <section class="post">
-    <p>Least comman ancestor (LCA) is a extremely useful algorithm in taxonomy assignment which enables the identification of the shared parent node for a list of given child nodes. Here is a piece of code implementing the LCA search based on nested dictionary in Python.</p>
+    <p>Least common ancestor (LCA) is an extremely useful algorithm in taxonomy assignment which enables the identification of the shared parent node for a list of given child nodes. Here is a piece of code implementing the LCA search based on nested dictionary in Python.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span>
 <span class="line">2</span>
 <span class="line">3</span>
@@ -164,7 +164,9 @@
 <span class="line">25</span>
 <span class="line">26</span>
 <span class="line">27</span>
-</pre></td><td class="code"><pre><span class="line">example_dict = &#123;<span class="string">'key1a'</span>: &#123;&#125;,</span>
+<span class="line">28</span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment"># define the tree</span></span>
+<span class="line">example_dict = &#123;<span class="string">'key1a'</span>: &#123;&#125;,</span>
 <span class="line">                <span class="string">'key1b'</span>: &#123;&#125;,</span>
 <span class="line">                <span class="string">'key1c'</span>: &#123;<span class="string">'key2a'</span>: &#123;<span class="string">'key3a'</span>: &#123;&#125;&#125;,</span>
 <span class="line">                          <span class="string">'key2b'</span>: &#123;<span class="string">'key3b'</span>: &#123;&#125;&#125;,</span>
@@ -177,7 +179,7 @@
 <span class="line">                                    &#125;</span>
 <span class="line">                          &#125;</span>
 <span class="line">                &#125;</span>
-<span class="line"></span>
+<span class="line"><span class="comment"># recursive</span></span>
 <span class="line"><span class="function"><span class="keyword">def</span> <span class="title">locate_node</span><span class="params">(tree, node)</span>:</span></span>
 <span class="line">    <span class="keyword">for</span> child_key, child_value <span class="keyword">in</span> tree.items():</span>
 <span class="line">        <span class="keyword">if</span> isinstance(child_value, dict):</span>

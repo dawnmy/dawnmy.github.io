@@ -296,6 +296,9 @@
 <h3 id="list-matched-multiple-files-with-pattern"><a href="#list-matched-multiple-files-with-pattern" class="headerlink" title="list matched multiple files with pattern"></a>list matched multiple files with pattern</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
 </pre></td><td class="code"><pre><span class="line">ls mydir/pg_&#123;cds_snp,snp_diversity,kb_cov,kb_window_snp_count&#125;.txt</span>
 </pre></td></tr></table></figure>
+<h3 id="split-fasta-file-into-single-seq-file-using-AWK"><a href="#split-fasta-file-into-single-seq-file-using-AWK" class="headerlink" title="split fasta file into single seq file using AWK"></a>split fasta file into single seq file using AWK</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">awk &apos;/^&gt;/&#123;file=&quot;seq_&quot;++d&#125; &#123;print &gt; file&#125;&apos; &lt; input.fa</span>
+</pre></td></tr></table></figure>
 
   </section>
 
